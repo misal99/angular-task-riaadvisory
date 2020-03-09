@@ -1,0 +1,14 @@
+<label class="text-capitalize bold">{{service.getReadableString(label)}}:</label>
+<table class="table table-bordered">
+  <tr>
+    <th *ngFor="let child of items" class="text-capitalize">{{service.getReadableString(getKeys(child)[0])}}</th>
+  </tr>
+  <tr>
+    <td *ngFor="let child of items">
+      <span *ngIf="service.isListType(child, getKeys(child)[0]); else list"> <input class="form-control" type="{{child[getKeys(child)]}}"></span>
+      <ng-template #list>
+        <button (click)="onClick(child[getKeys(child)], child)" [disabled]="disabled"><i class="fa fa-share-square-o" aria-hidden="true"></i></button>
+      </ng-template>
+    </td>
+  </tr>
+</table>

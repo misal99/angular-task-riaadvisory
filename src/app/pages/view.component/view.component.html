@@ -1,0 +1,22 @@
+<div *ngFor="let key of initialKeys" class="row">
+  <div *ngIf="service.isListType(inputJson, key); else list" class="col-6 mt-2">
+    <label class="label text-capitalize bold">{{service.getReadableString(key)}}:</label>
+    <input [type]="inputJson[key]" class="form-control">
+  </div>
+  <ng-template #list>
+    <div class="col-6 mt-2" *ngIf="service.isArray(inputJson[key]); else fieldView">
+      <table-view [items]="inputJson[key]" [label]="key" (addComponentClick)="onAddComponentClick($event)"></table-view>
+    </div>
+    <ng-template #fieldView>
+      <div class="col-12 mt-4">
+        <label class="label text-capitalize bold">{{service.getReadableString(key)}}:</label>
+        <app-view [inputJson]="inputJson[key]"></app-view>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>
+<div class="row">
+  <div class="container-fluid mt-3 ml-1 col-6 text-left">
+    <section></section>
+  </div>
+</div>
