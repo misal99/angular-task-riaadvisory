@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, ViewChildren, QueryList, ComponentFactoryResolver, ComponentFactory, OnInit, Input } from '@angular/core';
 import { TableComponent } from '../table.component/table.component';
 import { SectionComponent } from '../section.component/section.component';
-import { CommonService } from '../comon.service';
+import { CommonService } from '../../service/common.service';
 
 @Component({
   selector: 'app-view',

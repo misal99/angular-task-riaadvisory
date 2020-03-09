@@ -1,6 +1,5 @@
-import { Component, Input, OnChanges, Output, EventEmitter, ViewChild, forwardRef } from '@angular/core';
-import { ViewComponent } from '../view.component/view.component';
-import { CommonService } from '../comon.service';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonService } from '../../service/common.service';
 
 @Component({
   selector: 'table-view',

@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './pages/table.component/table.component';
 import { SectionComponent } from './pages/section.component/section.component';
 import { ViewComponent } from './pages/view.component/view.component';
-import { CommonService } from './pages/comon.service';
+import { CommonService } from './service/common.service';
 
 @NgModule({
   declarations: [
