@@ -9,7 +9,7 @@ import { CommonService } from '../../service/common.service';
 })
 export class ViewComponent implements AfterViewInit, OnInit {
   @ViewChildren(SectionComponent) sections: QueryList<SectionComponent>;
-  activeSections: SectionComponent[];
+  activeSections: SectionComponent[] = [];
   textComponentFactory: ComponentFactory<TableComponent>;
 
   initialKeys: string[];
@@ -47,10 +47,9 @@ export class ViewComponent implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit() {
-    this.activeSections = this.sections.reduce((result, section, index) => {
-      result.push(section);
-      return result;
-    }, []);
+    this.sections.forEach(item => {
+      this.activeSections.push(item);
+    });
   }
 
   onAddComponentClick(data) {
